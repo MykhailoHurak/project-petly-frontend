@@ -19,4 +19,4 @@ export const AuthNav = ({ onClick }) => {
       <StyledList>{elements}</StyledList>
     </StyledContainer>
   );
-};
+}
