@@ -7,7 +7,7 @@ import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
-    <BrowserRouter basename="/petly-service">
+    <BrowserRouter basename="/project-petly-frontend">
       <App />
     </BrowserRouter>
   </React.StrictMode>
