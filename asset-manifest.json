@@ -1,8 +1,8 @@
 {
   "files": {
     "main.css": "/project-petly-frontend/static/css/main.0d5b2924.css",
-    "main.js": "/project-petly-frontend/static/js/main.1c921ebc.js",
-    "static/js/812.3a25f598.chunk.js": "/project-petly-frontend/static/js/812.3a25f598.chunk.js",
+    "main.js": "/project-petly-frontend/static/js/main.a1759532.js",
+    "static/js/812.4fd44c02.chunk.js": "/project-petly-frontend/static/js/812.4fd44c02.chunk.js",
     "static/js/589.45378f2f.chunk.js": "/project-petly-frontend/static/js/589.45378f2f.chunk.js",
     "static/js/664.16e6d7d7.chunk.js": "/project-petly-frontend/static/js/664.16e6d7d7.chunk.js",
     "static/js/561.58e1d8cd.chunk.js": "/project-petly-frontend/static/js/561.58e1d8cd.chunk.js",
@@ -22,8 +22,8 @@
     "static/media/hero-heart-des-2x.png": "/project-petly-frontend/static/media/hero-heart-des-2x.8b652c34b0b6e5826271.png",
     "index.html": "/project-petly-frontend/index.html",
     "main.0d5b2924.css.map": "/project-petly-frontend/static/css/main.0d5b2924.css.map",
-    "main.1c921ebc.js.map": "/project-petly-frontend/static/js/main.1c921ebc.js.map",
-    "812.3a25f598.chunk.js.map": "/project-petly-frontend/static/js/812.3a25f598.chunk.js.map",
+    "main.a1759532.js.map": "/project-petly-frontend/static/js/main.a1759532.js.map",
+    "812.4fd44c02.chunk.js.map": "/project-petly-frontend/static/js/812.4fd44c02.chunk.js.map",
     "589.45378f2f.chunk.js.map": "/project-petly-frontend/static/js/589.45378f2f.chunk.js.map",
     "664.16e6d7d7.chunk.js.map": "/project-petly-frontend/static/js/664.16e6d7d7.chunk.js.map",
     "561.58e1d8cd.chunk.js.map": "/project-petly-frontend/static/js/561.58e1d8cd.chunk.js.map",
@@ -34,6 +34,6 @@
   },
   "entrypoints": [
     "static/css/main.0d5b2924.css",
-    "static/js/main.1c921ebc.js"
+    "static/js/main.a1759532.js"
   ]
 }
