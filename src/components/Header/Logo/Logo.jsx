@@ -1,12 +1,9 @@
-import { StyledImg, StyledImgContainer } from './Logo.styled';
-import logo from '../../../img/header-hero/logo.png';
+import { StyledLogoContainer, StyledLogo, StyledLogoT } from './Logo.styled';
 
 export const Logo = () => {
   return (
-    <StyledImgContainer>
-      <a href="/project-petly-frontend">
-        <StyledImg src={logo} alt="logo" />
-      </a>
-    </StyledImgContainer>
+    <StyledLogoContainer>
+      <StyledLogo href="/project-petly-frontend">pe<StyledLogoT>t</StyledLogoT>ly</StyledLogo>
+    </StyledLogoContainer>
   );
 };
