@@ -38,7 +38,7 @@ export const HomeSection = styled.section`
   background-size: cover;
   padding-top: 60px;
   width: -webkit-fill-available;
-  height: calc(100% - 56px);
+  height: 545px;
   @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -49,7 +49,7 @@ export const HomeSection = styled.section`
     background-image: url('${heroBgTab}');
     padding-top: 90px;
     width: -webkit-fill-available;
-    height: calc(100% - 56px);
+    height: 1137px;
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
@@ -59,7 +59,7 @@ export const HomeSection = styled.section`
   }
   @media screen and (min-width: 1280px) {
     width: -webkit-fill-available;
-    height: calc(100% - 69px);
+    height: 699px;
     background-size: contain;
     background-position: bottom;
     background-image: url('${heroBgDes}');
@@ -75,10 +75,10 @@ export const HomeSection = styled.section`
 
 export const Image = styled.img`
   min-width: 320px;
-  min-height: 337px;
+  max-height: 390px;
   @media screen and (min-width: 768px) {
     max-width: 645px;
-    max-height: 715px;
+    max-height: 1142px;
     margin-left: 61px;
     margin-right: 62px;
   }
