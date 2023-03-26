@@ -38,7 +38,7 @@ export const HomeSection = styled.section`
   background-size: cover;
   padding-top: 60px;
   width: -webkit-fill-available;
-  height: 545px;
+  height: calc(100% - 56px);
   @media (min-device-pixel-ratio: 2),
     (-webkit-min-device-pixel-ratio: 2),
     (min-resolution: 192dpi),
@@ -49,7 +49,7 @@ export const HomeSection = styled.section`
     background-image: url('${heroBgTab}');
     padding-top: 90px;
     width: -webkit-fill-available;
-    height: 1137px;
+    height: calc(100% - 56px);
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),
@@ -59,7 +59,7 @@ export const HomeSection = styled.section`
   }
   @media screen and (min-width: 1280px) {
     width: -webkit-fill-available;
-    height: 699px;
+    height: calc(100% - 69px);
     background-size: contain;
     background-position: bottom;
     background-image: url('${heroBgDes}');
@@ -74,17 +74,17 @@ export const HomeSection = styled.section`
 `;
 
 export const Image = styled.img`
-  min-width: 320px;
-  max-height: 390px;
+  max-width: 100%;
+  height: calc(100vh - 250px);
   @media screen and (min-width: 768px) {
-    max-width: 645px;
-    max-height: 1142px;
+    max-width: 100%;
+    height: calc(100vh - 440px);
     margin-left: 61px;
     margin-right: 62px;
   }
   @media screen and (min-width: 1280px) {
-    max-width: 590px;
-    max-height: 640px;
+    max-width: 100%;
+    height: calc(100vh - 200px);
   }
 `;
 

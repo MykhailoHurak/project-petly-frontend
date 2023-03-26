@@ -24,7 +24,6 @@ export const StyledHeader = styled.div`
   padding-right: 20px;
   margin-bottom: 46px;
   width: 320px;
-  margin-top: 0;
   margin-left: auto;
   margin-right: auto;
   @media (min-width: 768px) {
@@ -42,7 +41,6 @@ export const StyledContainerUserMenu = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  p
 `;
 
 export const StyledUserMenu = styled.div`
