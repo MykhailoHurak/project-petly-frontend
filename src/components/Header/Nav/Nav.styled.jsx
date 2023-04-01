@@ -1,49 +1,76 @@
-import styled from 'styled-components';
+import { styled } from '@mui/material/styles';
 import { NavLink } from 'react-router-dom';
 
-export const StyledNavContainer = styled.div``;
+export const StyledNavContainer = styled('div')(({ theme }) => ({
+  width: '100%',
+}));
 
-export const StyledNavList = styled.ul`
-  padding-left: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 40px;
-  align-items: center;
-  @media (min-width: 768px) {
-    gap: 60px;
-  }
-  @media (min-width: 1280px) {
-    flex-direction: row;
-    gap: 80px;
-  }
-`;
+export const StyledNavList = styled('ul')(({ theme }) => ({
+  display: 'flex',
+  flexDirection: 'column',
+  alignItems: 'center',
+  margin: '0 auto',
 
-export const StyledNavItem = styled.li`
-  list-style: none;
-`;
+  paddingLeft: 0,
 
-export const StyledLink = styled(NavLink)`
-  font-size: 32px;
-  line-height: 1.36;
-  font-weight: 500;
-  color: rgba(24, 28, 39, 1);
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    color: rgba(245, 146, 86, 1);
-  }
-  &.active {
-    color: rgba(245, 146, 86, 1);
-    font-weight: 500;
-  }
-  @media (min-width: 768px) {
-    font-size: 500;
-  }
-  @media (min-width: 1280px) {
-    font-size: 20px;
+  [theme.breakpoints.up(theme.breakpoints.values.desktop)]: {
+    flexDirection: 'row',
+  },
+}));
 
-    &.active {
-      text-decoration: underline;
-    }
-  }
-`;
+export const StyledNavItem = styled('li')(({ theme }) => ({
+  listStyle: 'none',
+
+  '&:not(:last-child)': {
+    marginBottom: 40,
+  },
+
+  [theme.breakpoints.up(theme.breakpoints.values.tablet)]: {
+    '&:not(:last-child)': {
+      marginBottom: 40,
+    },
+  },
+
+  [theme.breakpoints.up(theme.breakpoints.values.desktop)]: {
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+
+    '&:not(:last-child)': {
+      marginBottom: 0,
+      marginRight: 80,
+    },
+  },
+}));
+
+export const StyledLink = styled(NavLink)(({ theme }) => ({
+  fontSize: theme.customFontSizes[7],
+  lineHeight: 1.36,
+  fontWeight: theme.customFontWeight.normalM,
+  color: 'rgba(24, 28, 39, 1)',
+  textDecoration: 'none',
+
+  '&:hover': {
+    color: 'rgba(245, 146, 86, 1)',
+  },
+
+  '&.active': {
+    color: 'rgba(245, 146, 86, 1)',
+    fontWeight: theme.customFontWeight.bold,
+    textDecoration: 'underline',
+  },
+
+  [theme.breakpoints.up(theme.breakpoints.values.tablet)]: {
+    fontSize: 48,
+    lineHeight: theme.customLineHeight[8],
+    letterSpacing: theme.customLetterSpacing.m,
+  },
+
+  [theme.breakpoints.up(theme.breakpoints.values.desktop)]: {
+    fontSize: theme.customFontSizes[4],
+
+    '&.active': {
+      textDecoration: 'underline',
+    },
+  },
+}));

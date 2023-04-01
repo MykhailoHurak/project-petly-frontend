@@ -1,22 +1,46 @@
-import { StyledContainer, StyledList, StyledItem, StyledButton } from './AuthNav.styled';
+import { useSelector } from 'react-redux';
+import selector from 'redux/auth/auth-selectors';
+import {
+  StyledContainer,
+  StyledList,
+  StyledItem,
+  StyledButton,
+  StyledContainerNew,
+  StyledButtonNew,
+  StyledIconContainer,
+  StyledIcon,
+} from './AuthNav.styled';
+
+const items = [
+  { text: 'Login', href: '/login' },
+  { text: 'Registration', href: '/register' },
+];
 
 export const AuthNav = ({ onClick }) => {
-  const items = [
-    { text: 'Login', href: '/login' },
-    { text: 'Registration', href: '/register' },
-  ];
-  
-  const elements = items.map(({ text, href }) => {
-    return (
-      <StyledItem key={text} onClick={onClick}>
-        <StyledButton to={href}>{text}</StyledButton>
-      </StyledItem>
-    );
-  });
+  const isLoggedIn = useSelector(selector.getIsLoggedIn);
 
-  return (
+  return isLoggedIn ? (
+    <StyledContainerNew>
+      <StyledButtonNew to="/user" onClick={onClick}>
+        <StyledIconContainer>
+          <StyledIcon />
+          Account
+        </StyledIconContainer>
+      </StyledButtonNew>
+    </StyledContainerNew>
+  ) : (
     <StyledContainer>
-      <StyledList>{elements}</StyledList>
+      <StyledList>
+        {items.map(({ text, href }) => {
+          return (
+            <StyledItem key={text}>
+              <StyledButton to={href} onClick={onClick}>
+                {text}
+              </StyledButton>
+            </StyledItem>
+          );
+        })}
+      </StyledList>
     </StyledContainer>
   );
 };

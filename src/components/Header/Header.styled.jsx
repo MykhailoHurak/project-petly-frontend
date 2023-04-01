@@ -1,37 +1,33 @@
-import styled from 'styled-components';
+import { styled } from '@mui/material/styles';
 
-export const StyledHeader = styled.header`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-top: 16px;
-  @media (min-width: 768px) {
-    padding-top: 24px;
-    justify-content: baseline;
-  }
-  @media (min-width: 1280px) {
-    padding-top: 20px;
-  }
-`;
+export const StyledHeader = styled('header')(({ theme }) => ({
+  backgroundColor: theme.customColors.appBackground,
+}));
 
-export const StyledMenuContainer = styled.div`
-  margin-left: auto;
-  margin-right: 25px;
-  @media (min-width: 1280px) {
-    margin-right: 0;
-  }
-`;
+export const MainContainer = styled('div')(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'space-between',
+  alignItems: 'center',
+  width: 320,
+  margin: '0 auto',
+  padding: '26px 20px 60px 20px',
 
-export const MainContainer = styled.div`
-  width: 320px;
-  margin: 0 auto;
-  padding: 0 20px;
-  @media (min-width: 768px) {
-    width: 768px;
-    padding: 0 32px;
-  }
-  @media (min-width: 1280px) {
-    width: 1280px;
-    padding: 0 16px;
-  }
-`;
+  [theme.breakpoints.up(theme.breakpoints.values.tablet)]: {
+    width: 768,
+    padding: '26px 32px 60px 32px',
+  },
+
+  [theme.breakpoints.up(theme.breakpoints.values.desktop)]: {
+    width: 1280,
+    padding: '26px 16px 60px 16px',
+  },
+}));
+
+export const Wrapper = styled('div')(({ theme }) => ({
+  [theme.breakpoints.up(theme.breakpoints.values.tablet)]: {
+    display: 'flex',
+    justifyContent: 'end',
+    alignItems: 'center',
+    marginLeft: 246,
+  },
+}));

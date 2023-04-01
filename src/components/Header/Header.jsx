@@ -1,47 +1,47 @@
 import { useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
-import { StyledHeader, StyledMenuContainer, MainContainer } from './Header.styled';
-import {Logo} from './Logo/Logo';
-import {Nav} from './Nav/Nav';
-import {AuthNav} from './AuthNav/AuthNav';
-// import {UserNav} from './UserNav/UserNav';
-import {BurgerButton} from './BurgerButton/BurgerButton';
-import {BurgerMenu} from './BurgerMenu/BurgerMenu';
+import { Logo } from './Logo/Logo';
+import { Nav } from './Nav/Nav';
+import { AuthNav } from './AuthNav/AuthNav';
+import { BurgerButton } from './BurgerMenu/Buttons/BurgerButton';
+import { BurgerMenu } from './BurgerMenu/BurgerMenu';
 
+import { StyledHeader, MainContainer, Wrapper } from './Header.styled';
 
 export const Header = () => {
   const [showBurgerMenu, setShowBurgetMenu] = useState(false);
 
-  const isDesktop = useMediaQuery({ minWidth: 1280 });
   const isTablet = useMediaQuery({ minWidth: 768 });
+  const isDesktop = useMediaQuery({ minWidth: 1280 });
 
-  const toggleBurgerMenu = () => {
-    setShowBurgetMenu(state => !state);
+  const toggleBurgerMenuHandler = e => {
+    setShowBurgetMenu(!showBurgerMenu);
+    if (!showBurgerMenu) {
+      setShowBurgetMenu(false);
+    }
   };
 
-  const onClose = () => {
+  const responsiveToggleHandler = value => {
     setShowBurgetMenu(false);
   };
-
   return (
-    <MainContainer>
-      <StyledHeader>
+    <StyledHeader>
+      <MainContainer>
         <Logo />
         {isDesktop && <Nav />}
-
-        {isTablet && (
-          <StyledMenuContainer>
-            <AuthNav onClick={onClose} />
-            {/* <UserNav onClick={onClose} /> */}
-          </StyledMenuContainer>
-        )}
-
-        {!isDesktop && <BurgerButton onClick={toggleBurgerMenu} />}
-      </StyledHeader>
-
-      {!isDesktop && showBurgerMenu && (
-        <BurgerMenu onClick={toggleBurgerMenu} />
-      )}
-    </MainContainer>
+        <Wrapper>
+          {isTablet && <AuthNav onClick={toggleBurgerMenuHandler} />}
+          {showBurgerMenu && !isDesktop && (
+            <BurgerMenu
+              onClick={toggleBurgerMenuHandler}
+              hiddenBurgerMenu={responsiveToggleHandler}
+            />
+          )}
+          {!showBurgerMenu && !isDesktop && (
+            <BurgerButton onClick={() => setShowBurgetMenu(true)} />
+          )}
+        </Wrapper>
+      </MainContainer>
+    </StyledHeader>
   );
 };
