@@ -13,7 +13,7 @@ import { theme } from 'theme';
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <PersistGate loading={null} persistor={persistor}>
-      <BrowserRouter basename="/petly-service">
+      <BrowserRouter basename="/project-petly-frontend">
         <Provider store={store}>
           <ThemeProvider theme={theme}>
             <App />
